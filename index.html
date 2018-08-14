@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Can you name all of RuPaul's Drag Race winners in 60 seconds?</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<!-- =============== 
+TITLE OF QUIZ 
+=============== -->
+
+    <header>
+        <h1>Can you name all of RuPaul's Drag Race winners in 60 seconds?</h1>
+    </header>
+    <main>
+
+<!-- ===============
+LIST OF QUEENS
+=============== -->
+        <section>
+            <ul class="queen-list"></ul>
+        </section>
+
+        <section>
+            <h2></h2>
+        </section>
+
+<!-- =============== 
+FORM TO PUT QUEEN NAME
+=============== -->
+
+        <section>
+            <form method="POST" class="queen-form" autocomplete="off" name="queen-form">
+                <label for="queen-input">Name a queen!</label>
+                <input type="text" class="queen-input" name="queen-name" id="queen-input" placeholder="Name a queen...">
+                <!-- <input type="submit" class="queen-submit" name="queen-submit" id="queen-submit" value="Submit"> -->
+            </form>
+        </section>
+    </main>
+
+
+<!-- ===============
+LINKING THE JQUERY LIBRARY AND JAVASCRIPT SHEET
+=============== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
