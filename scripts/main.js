@@ -32,67 +32,106 @@ const queenNames = {
     chad: ["chad michaels", "chad"],
     alsaka: ["alaska"],
     trixie: ["trixie mattel", "trixie"]
-}
+} 
 
-let inputQueens = [];
+//inputQueens.push(queen);
+let newInputedQueens = [];
+// let queenInput = $("input").val();
+// let userInput = "";
 
 $(document).ready(function () {
     
+//START OF SUBMIT FUNCTION    
     $("form").on("submit", function(e){
         e.preventDefault();
-        
-        //loop into the array and names. and if the input matches a name in the array. then you can add it to the list 
+        let queenInput = $("input").val();
+        let userInput = "false";  
 
-        //loop into the object with a for in loop
-        // For loops good for arrays. For in loops good for objects 
+// IF THE INPUT IS IN THE ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING  
+        for (let i = 0; i < newInputedQueens.length; i++){
+            // console.log(newInputedQueens);
+            // console.log(newInputedQueens[i]);
+            if (queenInput === newInputedQueens[i]){
+                console.log("yo");
+// ***???there must be a better way to replace or not put anything into what's supposed to be in it
+                // $("ul").remove("<li> </li>");
+                // $("ul").remove();
+                // $("ul").detach();
+                // $("ul").append(`<li class="duplicate">" + ${queenNames[item][0]} + "</li>`);
+                // $("ul").not("")
+                
+                // ("<li>" + queenNames[item][0] + "</li>")
+                // $("ul").noop()
+                // $.noop();
+                $(".sayings").append("<p>You already wrote that!</p>");
+                $(".sayings").delay(2000).fadeOut("slow");
+                $("input").val("");
+            }
+        } // END OF THE FIRST LOOP FOR THE NEW ARRAY newInputedQueens
+
+//A FOR IN LOOP INTO THE OBJECT AND A LOOP INTO THE ARRAY
         for (let item in queenNames) {
-        //loop into each array    
+            //create a variable that holds what the user puts in 
             for (let i = 0; i < queenNames[item].length; i++){
-        //makes sure only the queens can be inputed queenNames[item][i]
-                if ($("input").val() === queenNames[item][i]) {
-                    let queen = $("input").val();
-                    inputQueens.push(queen);
-                    $("ul").append("<li>" + queen + "</li>");
+//MAKE SURE ONLY THE QUEENS CAN BE INPUTTED IN 
+// true that name appears here. set variable value to true 
+// else set variable to false 
+                if (queenInput === queenNames[item][i]) {
+                    userInput = "true";
+                    // queenInput = queenNames[item][0];
+                    $("ul").append("<li>" + queenNames[item][0] + "</li>");
                     $("input").val("");
-                    console.log(inputQueens);
-                    
-        //append "Nope! Try again :)" once and then let it come off after a minute and turn it into another saying            
-                } else if ($("input").val() !== queenNames[item][i]){
-                    // $("input").val("Try again!");
-                    // $("input").val("");
-                    // $("h2").append("Nope! Try again :)")
-                }
+                    newInputedQueens.push(queenNames[item][0], queenNames[item][1], queenNames[item][2]);
+                    // console.log(newInputedQueens);
+                } 
             }
+        } //END OF THE NESTED LOOPS FOR THE ORIGINAL OBECT AND THE ARRAYS IN THE OBJECT
+
+// NEEDS TO PUSH EVERY SINGLE NAME INTO THE NEW ARRAY newInputedQueens
+        // if (queenInput === )
+
+
+//OTHER QUEENS WITH BEYONCE AND QUEEN ELIZABETH
+        if (($("input").val() === "beyonce") || ($("input").val() === "queen elizabeth")) {
+            userInput = true;
+            let otherQueens = $("input").val()
+            $(".sayings").append(`<p> ${otherQueens} is obviously a queen, but not what we're looking for :)</p>`)
+            $("input").val("");
+// is there a better way to make it disappear? Also, we want this ti interchange between certain sayings. should that be a flickity?      
+            $(".sayings").delay(2000).fadeOut("slow");
+        } 
+
+//THIS IS WHAT HAPPENS IF A USER INPUT IS FALSE
+        if (userInput === "false"){
+            $(".sayings").append("<p>Wrong!</[>");
+            $("input").val("");
+            $(".sayings").delay(2000).fadeOut("slow");
         }
-     
-    //if the name is already in the array. don't put it in again 
-    //loop over the new array  
-        
-            for (i = 0; i < inputQueens.length; i++){
-                //logs the number of the array
-                // console.log(i);
-                // console.log(inputQueens[i]);
-                if ($("input").val() === inputQueens[i]){
-                    console.log(inputQueens[i]);
-                    
-                    // let statement = "You already added that"
-                    // $("ul").append("<li>" + statement + "</li>");
-                    // $("input").val("");
-                    // $("input").val("You put that already");
-                }
-                
-                
-                // if ($("input").val() === inputQueens[i]){
-                //     $("input").val("You put that already");
-                // }
-            }
-        
-        
-        
-        
-        
-        
-    });
+
+// //IF THE INPUT IS IN THE ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING         
+    
+        // newInputedQueens.forEach(function(queeninNewArray){
+        //     if (queenInput === queeninNewArray){
+        //         console.log('yo');
+        //         $(".sayings").append("<p>You already added her!</p>");
+        //         $("input").val("");
+        //         $(".sayings").delay(2000).fadeOut("slow");
+        //     }
+        // });    
+
+        // for (let i = 0; i < newInputedQueens.length; i++){
+        //     // console.log(newInputedQueens);
+        //     console.log(newInputedQueens[i]);
+
+        //     if (queenInput === newInputedQueens[i]){
+        //         console.log("yo");
+        //         // console.log(newInputedQueens);
+        //         // console.log(newInputedQueens[i]);
 
 
-});
+        //     }
+        // }
+        
+    }); // END OF SUBMIT FUNCTION 
+
+}); // END OF THE DOCUMENT READY FUNCTION
