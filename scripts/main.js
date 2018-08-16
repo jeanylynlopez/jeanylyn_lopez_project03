@@ -17,7 +17,9 @@
 
 //**make sure the input isn't case sensitive 
 
-// an array of all the queens names and their other possible names 
+//-------
+
+// AN ARRAY OF ALL THE QUEEN'S NAMES 
 const queenNames = {
     bebe: ["bebe zahara bene", "bebe zahara", "bebe"],
     tyra: ["tyra sanchez", "tyra"],
@@ -38,6 +40,7 @@ const queenNames = {
 let newInputedQueens = [];
 // let queenInput = $("input").val();
 // let userInput = "";
+let userInputFirst = [];
 
 $(document).ready(function () {
     
@@ -46,92 +49,112 @@ $(document).ready(function () {
         e.preventDefault();
         let queenInput = $("input").val();
         let userInput = "false";  
+        let eachNewInputedQueens = "";
+        let countdown;
+        // let userInputFirst = [];
 
-// IF THE INPUT IS IN THE ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING  
+// IF THE INPUT IS IN THE NEW ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING  
         for (let i = 0; i < newInputedQueens.length; i++){
-            // console.log(newInputedQueens);
-            // console.log(newInputedQueens[i]);
             if (queenInput === newInputedQueens[i]){
-                console.log("yo");
-// ***???there must be a better way to replace or not put anything into what's supposed to be in it
-                // $("ul").remove("<li> </li>");
-                // $("ul").remove();
-                // $("ul").detach();
-                // $("ul").append(`<li class="duplicate">" + ${queenNames[item][0]} + "</li>`);
-                // $("ul").not("")
-                
-                // ("<li>" + queenNames[item][0] + "</li>")
-                // $("ul").noop()
-                // $.noop();
-                $(".sayings").append("<p>You already wrote that!</p>");
-                $(".sayings").delay(2000).fadeOut("slow");
+//???????bob would be equal to bob 
+//????can we make these names better so we know what's happening?
+                eachNewInputedQueens = newInputedQueens[i];
+                $(".duplicate").html("<p>You already wrote that!</p>").show();
+                $(".duplicate").delay(2000).fadeOut("slow");
                 $("input").val("");
-            }
+            } 
         } // END OF THE FIRST LOOP FOR THE NEW ARRAY newInputedQueens
 
 //A FOR IN LOOP INTO THE OBJECT AND A LOOP INTO THE ARRAY
         for (let item in queenNames) {
+            
             //create a variable that holds what the user puts in 
             for (let i = 0; i < queenNames[item].length; i++){
 //MAKE SURE ONLY THE QUEENS CAN BE INPUTTED IN 
 // true that name appears here. set variable value to true 
 // else set variable to false 
-                if (queenInput === queenNames[item][i]) {
+
+                if (queenInput === eachNewInputedQueens){
+                    console.log("Do nothing!");
+                    userInput = "true";
+                    
+                } else if (queenInput === queenNames[item][i]) {
                     userInput = "true";
                     // queenInput = queenNames[item][0];
+                    // randomInput = $("input").val();
                     $("ul").append("<li>" + queenNames[item][0] + "</li>");
                     $("input").val("");
                     newInputedQueens.push(queenNames[item][0], queenNames[item][1], queenNames[item][2]);
-                    // console.log(newInputedQueens);
-                } 
+                }
             }
         } //END OF THE NESTED LOOPS FOR THE ORIGINAL OBECT AND THE ARRAYS IN THE OBJECT
 
-// NEEDS TO PUSH EVERY SINGLE NAME INTO THE NEW ARRAY newInputedQueens
-        // if (queenInput === )
-
-
 //OTHER QUEENS WITH BEYONCE AND QUEEN ELIZABETH
+// is there a better way to make it disappear? Also, we want this to interchange between certain sayings. should that be a flickity?      
         if (($("input").val() === "beyonce") || ($("input").val() === "queen elizabeth")) {
             userInput = true;
             let otherQueens = $("input").val()
-            $(".sayings").append(`<p> ${otherQueens} is obviously a queen, but not what we're looking for :)</p>`)
+            $(".anotherQueen").html(`${otherQueens} is obviously a queen, but not what we're looking for :)`).show();
             $("input").val("");
-// is there a better way to make it disappear? Also, we want this ti interchange between certain sayings. should that be a flickity?      
-            $(".sayings").delay(2000).fadeOut("slow");
+            $(".anotherQueen").delay(2000).fadeOut("slow");
         } 
 
 //THIS IS WHAT HAPPENS IF A USER INPUT IS FALSE
         if (userInput === "false"){
-            $(".sayings").append("<p>Wrong!</[>");
+            //HTML IS MAKING SURE WE ONLY HAVE ONE DISPLAYED INSIDE OF IT AND WE'RE USING SHOW TO MAKE SURE IT SHOWS 
+            $(".wrong").html("Wrong!").show();
             $("input").val("");
-            $(".sayings").delay(2000).fadeOut("slow");
-        }
-
-// //IF THE INPUT IS IN THE ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING         
-    
-        // newInputedQueens.forEach(function(queeninNewArray){
-        //     if (queenInput === queeninNewArray){
-        //         console.log('yo');
-        //         $(".sayings").append("<p>You already added her!</p>");
-        //         $("input").val("");
-        //         $(".sayings").delay(2000).fadeOut("slow");
-        //     }
-        // });    
-
-        // for (let i = 0; i < newInputedQueens.length; i++){
-        //     // console.log(newInputedQueens);
-        //     console.log(newInputedQueens[i]);
-
-        //     if (queenInput === newInputedQueens[i]){
-        //         console.log("yo");
-        //         // console.log(newInputedQueens);
-        //         // console.log(newInputedQueens[i]);
-
-
-        //     }
-        // }
+            $(".wrong").delay(2000).fadeOut("slow");
+        } 
         
+//PUSH INTO NEW ARRAY FOR THE FIRST INPUT 
+        userInputFirst.push(queenInput);
+        // console.log(userInputFirst);
+        
+        // userInputFirst.unshift("start");
+        // console.log(userInputFirst);
+        // if (blah !== userInputFirst[0])
+        if (userInputFirst.length === 1){
+            // START THE TIMER
+            // how do i start the timer only when i submit an answer 
+            console.log(queenInput);
+            console.log(userInputFirst[0]);
+            console.log(userInputFirst);
+            console.log(userInputFirst.length);
+            
+            function timer(seconds) {
+                //this is grabbing the current time stamp in milliseconds  
+                const now = Date.now();
+                // this will be Date.now() + seconds that we passed in multiplied by 1000
+                const then = now + seconds * 1000;
+                displayTimeLeft(seconds);
+                $(".timer").html(seconds);
+                countdown = setInterval(function(){
+                    const secondsLeft = Math.round((then - Date.now()) / 1000);
+                    // in here can we stop the code from happening 
+                    if (secondsLeft <= 0){
+                        clearInterval(countdown);
+                        $(".timer").empty();
+                        $(".timer").append("<p> TIME'S UP!</p>")
+                        // alert("Game over!");
+                    }
+                    //display it
+                    displayTimeLeft(secondsLeft);
+                    $(".timer").html(secondsLeft);
+
+                }, 1000);
+            }
+    
+            function displayTimeLeft(seconds){
+                // console.log(seconds);
+            }
+        
+            timer(5);
+        } //END OF NEW ARRAY FOR FIRST INPUT 
+        
+        
+
     }); // END OF SUBMIT FUNCTION 
+
 
 }); // END OF THE DOCUMENT READY FUNCTION
