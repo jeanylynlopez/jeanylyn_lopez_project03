@@ -14,6 +14,7 @@ TITLE OF QUIZ
 =============== -->
 
     <header>
+        <!-- <img src="assets/2000px-RuPaul's_Drag_Race_Logo.svg.png" alt="Rupaul's Drage Race logo in red"> -->
         <h1>Can you name all of RuPaul's Drag Race winners in 60 seconds?</h1>
     </header>
 
@@ -27,29 +28,26 @@ MAIN SECTION
 TIMER CLOCK
 =============== -->
 
-        <section class="timer">
+        <section class="timer wrapper">
 
         </section>
 
 <!-- ===============
 LIST OF QUEENS
 =============== -->
-        <section>
-            <ul class="queen-list">
-                <!-- <li class="duplicate"></li> -->
-            </ul>
-        </section>
-
+        <section class="wrapper">
+            <ul class="queen-list"></ul>
+            <ul class="missed-queens"></ul>
+        </section> 
         
 <!-- =============== 
 FORM TO PUT QUEEN NAME
 =============== -->
             
-        <section>
+        <section class="wrapper">
             <form method="POST" class="queen-form" autocomplete="off" name="queen-form">
                 <label for="queen-input">Name a queen!</label>
                 <input type="text" class="queen-input" name="queen-name" id="queen-input" placeholder="Name a queen...">
-                <!-- <input type="submit" class="queen-submit" name="queen-submit" id="queen-submit" value="Submit"> -->
             </form>
         </section>
 
@@ -57,7 +55,7 @@ FORM TO PUT QUEEN NAME
 RANDOM SAYINGS 
 =============== -->
     
-        <section class="sayings">
+        <section class="sayings wrapper">
             <p class="wrong"></p>
             <p class="duplicate"></p>
             <p class="anotherQueen"></p>

@@ -1,46 +1,30 @@
-// An array of all RuPaul drag race winners
-    // Each winner would be an object that will include their nicknames.So you Can type in either their name or nicknames
-    //You shouldn’t be able to type in their name or nickname more than once
-// Should be able to type in an input
-    // Hit enter when you put things in
-    // Has a counter to say how many more queens you have left to name
-    // You’ll start with an empty ul and add li’s once you input a name
-    // Displays Yes or No when you press enter
-// You’ll need a one minute timer
-    // Display a time counter that counts down time
-    // You shouldn’t be able to type anything once the timer stops
-//Display the drag race winners when the timer runs out
-    // Display the queens that you forgot or all the queens
-    // Display how many queen out of 13 you got 
-
-// add what is typed as li in the ul .queen-list
-
-//**make sure the input isn't case sensitive 
-
-//-------
 
 // AN ARRAY OF ALL THE QUEEN'S NAMES 
-const queenNames = {
-    bebe: ["bebe zahara bene", "bebe zahara", "bebe"],
-    tyra: ["tyra sanchez", "tyra"],
-    raja: ["raja"],
-    sharon: ["sharon needles", "sharon", "needles"],
-    jinkx: ["jinkx monsoon", "jinkx"],
-    bianca: ["bianca del rio", "bianca"],
-    violet: ["violet cachki", "violet"],
-    bob: ["bob the drag queen", "bob"],
-    sasha: ["sasha velour", "sasha"],
-    aquaria: ["aquaria"],
-    chad: ["chad michaels", "chad"],
-    alsaka: ["alaska"],
-    trixie: ["trixie mattel", "trixie"]
+let queenNames = {
+    bebe: ["Bebe Zahara Bene", "bebe zahara bene", "bebe zahara", "bebe"],
+    tyra: ["Tyra Sanchez", "tyra sanchez", "tyra"],
+    raja: ["Raja", "raja"],
+    sharon: ["Sharon Needles", "sharon needles", "sharon", "needles"],
+    jinkx: ["Jinkx Monsoon", "jinkx monsoon", "jinkx"],
+    bianca: ["Biance Del Rio", "bianca del rio", "bianca"],
+    violet: ["Violet Cachki", "violet cachki", "violet"],
+    bob: ["Bob the Drag Queen", "bob the drag queen", "bob"],
+    sasha: ["Sasha Velour", "sasha velour", "sasha"],
+    aquaria: ["Aquaria", "aquaria"],
+    chad: ["Chad Michaels", "chad michaels", "chad"],
+    alsaka: ["Alaska", "alaska"],
+    trixie: ["Trixie Mattel", "trixie mattel", "trixie"]
 } 
 
 //inputQueens.push(queen);
 let newInputedQueens = [];
-// let queenInput = $("input").val();
-// let userInput = "";
+
+//just needs the first queen input 
 let userInputFirst = [];
+
+//===============
+//ARRAYS WHEN IT'S DONE 
+//===============
 
 $(document).ready(function () {
     
@@ -51,7 +35,6 @@ $(document).ready(function () {
         let userInput = "false";  
         let eachNewInputedQueens = "";
         let countdown;
-        // let userInputFirst = [];
 
 // IF THE INPUT IS IN THE NEW ARRAY THEN SAY YOU ALREADY HAVE IT AND DON'T INPUT ANYTHING  
         for (let i = 0; i < newInputedQueens.length; i++){
@@ -75,16 +58,25 @@ $(document).ready(function () {
 // else set variable to false 
 
                 if (queenInput === eachNewInputedQueens){
-                    console.log("Do nothing!");
+                    // console.log("Do nothing!");
                     userInput = "true";
                     
                 } else if (queenInput === queenNames[item][i]) {
                     userInput = "true";
                     // queenInput = queenNames[item][0];
                     // randomInput = $("input").val();
-                    $("ul").append("<li>" + queenNames[item][0] + "</li>");
+                    $(".queen-list").append("<li>" + queenNames[item][0] + "</li>");
+                    //push the string the user typed in 
+                    //console log both queenNames and newInputedQueens 
+                    //const queenNames is const change to let 
+                    // newInputedQueens.push(queenInput);
+                    newInputedQueens.push(queenNames[item][0], queenNames[item][1], queenNames[item][2], queenNames[item][3]);
+                    // queenNames[item].pop();
+                    queenNames[item].splice(0,5);
+                    console.log(queenNames);
+                    console.log(newInputedQueens);
+                    
                     $("input").val("");
-                    newInputedQueens.push(queenNames[item][0], queenNames[item][1], queenNames[item][2]);
                 }
             }
         } //END OF THE NESTED LOOPS FOR THE ORIGINAL OBECT AND THE ARRAYS IN THE OBJECT
@@ -107,21 +99,11 @@ $(document).ready(function () {
             $(".wrong").delay(2000).fadeOut("slow");
         } 
         
-//PUSH INTO NEW ARRAY FOR THE FIRST INPUT 
+// PUSH INTO NEW ARRAY FOR THE FIRST INPUT 
         userInputFirst.push(queenInput);
-        // console.log(userInputFirst);
-        
-        // userInputFirst.unshift("start");
-        // console.log(userInputFirst);
-        // if (blah !== userInputFirst[0])
+// IF THE USER INPUT ARRAY IS EQUAL TO ONE THEN START THE TIMER  
         if (userInputFirst.length === 1){
-            // START THE TIMER
-            // how do i start the timer only when i submit an answer 
-            console.log(queenInput);
-            console.log(userInputFirst[0]);
-            console.log(userInputFirst);
-            console.log(userInputFirst.length);
-            
+// START THE TIMER 
             function timer(seconds) {
                 //this is grabbing the current time stamp in milliseconds  
                 const now = Date.now();
@@ -131,26 +113,53 @@ $(document).ready(function () {
                 $(".timer").html(seconds);
                 countdown = setInterval(function(){
                     const secondsLeft = Math.round((then - Date.now()) / 1000);
-                    // in here can we stop the code from happening 
-                    if (secondsLeft <= 0){
-                        clearInterval(countdown);
-                        $(".timer").empty();
-                        $(".timer").append("<p> TIME'S UP!</p>")
-                        // alert("Game over!");
-                    }
                     //display it
                     displayTimeLeft(secondsLeft);
                     $(".timer").html(secondsLeft);
+                    // in here can we stop the timer if it goes to equal to less than 0  
+                    if (secondsLeft < 0){
+                        clearInterval(countdown);
+                        // alert("Game over!");
+                        $(".timer").empty();
+                        $(".timer").html("Game over!")
+
+                        //******css attribute dsiabled boolean 
+                        // .attr method 
+                        //target input use mthor attr and give it disabled or disabled = true  
+                        // $("form").on("submit", function(e){
+                        //     event.preventDefault()
+                        // })
+
+                        $("input").attr("disabled", true);
+
+                        // function disableInput() {
+                        //     $("input").disabled = true;
+                        // }
+
+                        // disableInput();
+
+
+                        // $("input").disabled = true; 
+
+                        // display all the queens the users didn't get
+                        // go through every array in the object and display the first item in the array 
+                        for (let item in queenNames){
+                            if (queenNames[item][0] !== undefined)
+                            $(".missed-queens").append("<li>" + queenNames[item][0] + "</li>")
+                        }
+                   
+                        
+
+                    }
 
                 }, 1000);
             }
     
             function displayTimeLeft(seconds){
-                // console.log(seconds);
             }
         
-            timer(5);
-        } //END OF NEW ARRAY FOR FIRST INPUT 
+            timer(3);
+        } //END OF THE TIMER FUNCTION 
         
         
 
