@@ -168,7 +168,7 @@ body {
 header {
   background-image: url(../assets/rupaul-lying-down-good-small.jpg);
   height: 100vh;
-  margin: 0px 0 0 375px;
+  margin: 0px 0 0 300px;
   background-size: cover;
   padding: 1px;
   width: 80%;
@@ -177,7 +177,7 @@ header {
 main {
   position: absolute;
   top: 70px;
-  left: 100px; }
+  left: 75px; }
 
 .title img {
   width: 45%;
@@ -247,6 +247,7 @@ label {
 input {
   width: 50%;
   height: 40px;
+  margin: 0 auto;
   padding: 5px;
   display: block;
   text-align: center;

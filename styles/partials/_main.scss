@@ -17,7 +17,7 @@ header {
     background-image: url(../assets/rupaul-lying-down-good-small.jpg);
     height: 100vh;
     //top right bottom left
-    margin: 0px 0 0 375px;
+    margin: 0px 0 0 300px;
     // margin: 15px 0 0 400px;
     background-size: cover;
     padding: 1px;
@@ -34,7 +34,7 @@ header {
 main {
     position: absolute;
     top: 70px;
-    left: 100px;
+    left: 75px;
     // margin-left: 150px;
     // left: 10px;
 }
@@ -154,7 +154,7 @@ label {
 input {
     width: 50%;
     height: 40px;
-    // margin: 0 auto;
+    margin: 0 auto;
     // margin-top: -10px;
     padding: 5px;
     display: block;
