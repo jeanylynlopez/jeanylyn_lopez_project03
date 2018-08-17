@@ -1,9 +1,164 @@
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+} 
+
 .wrapper {
     margin: 0 auto;
     max-width: 800px;
 }
 
+// =============== 
+// HEADER 
+// ===============
+
 header {
-    background-image: url(../assets/rupauls-drag-race-header-edit);
+    background-image: url(../assets/rupaul-lying-down-good-small.jpg);
+    height: 100vh;
+    margin: 15px 0 0 400px;
+    background-size: cover;
+    padding: 1px;
+    width: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
 }
 
+ .title h1 {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    // font-size: 30px;
+    // font-display: broadway;
+}
+
+// ===============
+// MAIN
+// ===============
+
+main {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+
+// ===============
+// TITLE
+// ===============
+
+.title img {
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+}
+
+// ===============
+// TIMER CLOCK
+// ===============
+
+.timer {
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    // font-size: 
+}
+
+// ===============
+// RANDOM SAYINGS
+// ===============
+
+.sayings {
+    height: 50px;
+    margin: -20px auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+// ===============
+// LIST OF QUEENS
+// =============== 
+
+ul {
+    list-style: none;
+    li {
+        margin-right: 10px;
+        padding: 3px;
+    }
+}
+
+.list {
+    display: flex;
+    align-content: center;
+    // justify-content: center;
+    height: 190px;
+    width: 40%;
+    // position: relative;
+    margin: -20px auto;
+}
+
+.remembered-queens {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 0 auto;
+    // padding-right: 5px;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // margin: 0 auto;
+}
+
+.hightlight {
+    background-color: $highlight-color;
+    color: white;
+    padding: 0 3px;
+}
+
+// .missed-queens {
+//     height: 120px;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     align-content: center;
+//     // padding-right: 5px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+// }
+
+// =============== 
+// FORM TO PUT QUEEN NAME
+// ===============
+
+form {
+    margin: 0 auto;
+    height: 20px;
+}
+
+label {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input {
+    width: 50%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid black;
+}
+
+// ===============
+// FOOTER
+// ===============
+
+footer img {
+    width: 100%;
+}

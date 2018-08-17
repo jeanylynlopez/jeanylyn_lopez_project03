@@ -13,7 +13,7 @@ let queenNames = {
     aquaria: ["Aquaria", "aquaria"],
     chad: ["Chad Michaels", "chad michaels", "chad"],
     alsaka: ["Alaska", "alaska"],
-    trixie: ["Trixie Mattel", "trixie mattel", "trixie"]
+    trixie: ["Trixie Mattel", "trixie mattel", "trixie"] 
 } 
 
 //inputQueens.push(queen);
@@ -42,8 +42,11 @@ $(document).ready(function () {
 //???????bob would be equal to bob 
 //????can we make these names better so we know what's happening?
                 eachNewInputedQueens = newInputedQueens[i];
-                $(".duplicate").html("<p>You already wrote that!</p>").show();
-                $(".duplicate").delay(2000).fadeOut("slow");
+                // $(".sayings").html("<p>You already wrote that!</p>").show();
+                // $(".sayings").delay(2000).fadeOut("slow");
+                
+                $(".duplicate").html("<p>You already have her!</p>").show();
+                $(".duplicate").delay(800).fadeOut("slow");
                 $("input").val("");
             } 
         } // END OF THE FIRST LOOP FOR THE NEW ARRAY newInputedQueens
@@ -65,7 +68,11 @@ $(document).ready(function () {
                     userInput = "true";
                     // queenInput = queenNames[item][0];
                     // randomInput = $("input").val();
-                    $(".queen-list").append("<li>" + queenNames[item][0] + "</li>");
+                    // $(".sayings").html("<p>Yes!</p>").show();
+                    // $(".sayings").delay(2000).fadeOut("slow");
+                    $(".right").html("Yass Queen!").show();
+                    $(".right").delay(500).fadeOut("slow");
+                    $(".remembered-queens").append("<li>" + queenNames[item][0] + "</li>");
                     //push the string the user typed in 
                     //console log both queenNames and newInputedQueens 
                     //const queenNames is const change to let 
@@ -86,7 +93,9 @@ $(document).ready(function () {
         if (($("input").val() === "beyonce") || ($("input").val() === "queen elizabeth")) {
             userInput = true;
             let otherQueens = $("input").val()
-            $(".anotherQueen").html(`${otherQueens} is obviously a queen, but not what we're looking for :)`).show();
+            // $(".sayings").html("<p>She's is obviously a queen, but not what we're looking for :)</p>").show();
+            // $(".sayings").delay(2000).fadeOut("slow");
+            $(".anotherQueen").html(`She's is obviously a queen, but not what we're looking for :)`).show();
             $("input").val("");
             $(".anotherQueen").delay(2000).fadeOut("slow");
         } 
@@ -94,9 +103,12 @@ $(document).ready(function () {
 //THIS IS WHAT HAPPENS IF A USER INPUT IS FALSE
         if (userInput === "false"){
             //HTML IS MAKING SURE WE ONLY HAVE ONE DISPLAYED INSIDE OF IT AND WE'RE USING SHOW TO MAKE SURE IT SHOWS 
+
+            // $(".sayings").html("<p>Wrong!</p>").show();
+            // $(".sayings").delay(2000).fadeOut("slow");
             $(".wrong").html("Wrong!").show();
             $("input").val("");
-            $(".wrong").delay(2000).fadeOut("slow");
+            $(".wrong").delay(500).fadeOut("slow");
         } 
         
 // PUSH INTO NEW ARRAY FOR THE FIRST INPUT 
@@ -110,46 +122,29 @@ $(document).ready(function () {
                 // this will be Date.now() + seconds that we passed in multiplied by 1000
                 const then = now + seconds * 1000;
                 displayTimeLeft(seconds);
-                $(".timer").html(seconds);
+                $(".timer h2").html(`0:${seconds}`);
                 countdown = setInterval(function(){
                     const secondsLeft = Math.round((then - Date.now()) / 1000);
                     //display it
                     displayTimeLeft(secondsLeft);
-                    $(".timer").html(secondsLeft);
+                    $(".timer h2").html(`0:${secondsLeft}`);
+                    if (secondsLeft < 10){
+                        $(".timer h2").empty();
+                        $(".timer h2").html(`0:0${secondsLeft}`);
+                    }
+
                     // in here can we stop the timer if it goes to equal to less than 0  
                     if (secondsLeft < 0){
                         clearInterval(countdown);
                         // alert("Game over!");
-                        $(".timer").empty();
-                        $(".timer").html("Game over!")
-
-                        //******css attribute dsiabled boolean 
-                        // .attr method 
-                        //target input use mthor attr and give it disabled or disabled = true  
-                        // $("form").on("submit", function(e){
-                        //     event.preventDefault()
-                        // })
-
+                        $(".timer h2").empty();
+                        $(".timer h2").html("Game over!")
                         $("input").attr("disabled", true);
 
-                        // function disableInput() {
-                        //     $("input").disabled = true;
-                        // }
-
-                        // disableInput();
-
-
-                        // $("input").disabled = true; 
-
-                        // display all the queens the users didn't get
-                        // go through every array in the object and display the first item in the array 
                         for (let item in queenNames){
                             if (queenNames[item][0] !== undefined)
-                            $(".missed-queens").append("<li>" + queenNames[item][0] + "</li>")
+                                $(".remembered-queens").append(`<li><span class="hightlight">${queenNames[item][0]} </span></li>`)
                         }
-                   
-                        
-
                     }
 
                 }, 1000);
@@ -158,7 +153,7 @@ $(document).ready(function () {
             function displayTimeLeft(seconds){
             }
         
-            timer(3);
+            timer(60);
         } //END OF THE TIMER FUNCTION 
         
         
