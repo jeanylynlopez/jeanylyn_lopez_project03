@@ -5,6 +5,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
+    // margin-left: 200px;
     max-width: 800px;
 }
 
@@ -15,21 +16,15 @@ body {
 header {
     background-image: url(../assets/rupaul-lying-down-good-small.jpg);
     height: 100vh;
-    margin: 15px 0 0 400px;
+    //top right bottom left
+    margin: 0px 0 0 375px;
+    // margin: 15px 0 0 400px;
     background-size: cover;
     padding: 1px;
-    width: 90%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 80%;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
     position: relative;
-}
-
- .title h1 {
-    margin: 0 auto;
-    text-align: center;
-    width: 50%;
-    // font-size: 30px;
-    // font-display: broadway;
 }
 
 // ===============
@@ -38,8 +33,10 @@ header {
 
 main {
     position: absolute;
-    top: 25px;
-    left: 10px;
+    top: 70px;
+    left: 100px;
+    // margin-left: 150px;
+    // left: 10px;
 }
 
 // ===============
@@ -47,9 +44,18 @@ main {
 // ===============
 
 .title img {
-    width: 30%;
+    width: 45%;
     margin: 0 auto;
     display: block;
+}
+
+ .title h1 {
+    margin: 0 auto;
+    // text-align: center;
+    width: 50%;
+
+    // font-size: 30px;
+    // font-display: broadway;
 }
 
 // ===============
@@ -57,7 +63,7 @@ main {
 // ===============
 
 .timer {
-    height: 50px;
+    height: 40px;
     text-align: center;
     margin: 0 auto;
     // font-size: 
@@ -68,7 +74,7 @@ main {
 // ===============
 
 .sayings {
-    height: 50px;
+    height: 40px;
     margin: -20px auto;
     text-align: center;
     font-weight: 700;
@@ -91,30 +97,28 @@ ul {
     display: flex;
     align-content: center;
     // justify-content: center;
-    height: 190px;
+    height: 130px;
     width: 40%;
     // position: relative;
-    margin: -20px auto;
-}
-
-.remembered-queens {
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    margin: 0 auto;
-    // padding-right: 5px;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // margin: 0 auto;
-}
-
-.hightlight {
-    background-color: $highlight-color;
-    color: white;
-    padding: 0 3px;
+    // margin: -20px auto;
+    .remembered-queens {
+        height: 125px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // align-content: center;
+        margin: 0 auto;
+        // padding-right: 5px;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // margin: 0 auto;
+        .hightlight {
+            background-color: $highlight-color;
+            color: white;
+            padding: 0 3px;
+        }
+    }
 }
 
 // .missed-queens {
@@ -135,6 +139,7 @@ ul {
 
 form {
     margin: 0 auto;
+    margin-top: -25px;
     height: 20px;
 }
 
@@ -142,12 +147,15 @@ label {
     display: block;
     margin: 0 auto;
     text-align: center;
+    background-color: $highlight-color;
+    color: white;
+    width: 15%;
 }
-
 input {
     width: 50%;
     height: 40px;
-    margin: 10px auto;
+    // margin: 0 auto;
+    // margin-top: -10px;
     padding: 5px;
     display: block;
     text-align: center;
@@ -159,6 +167,6 @@ input {
 // FOOTER
 // ===============
 
-footer img {
-    width: 100%;
-}
+// footer img {
+//     width: 100%;
+// }

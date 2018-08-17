@@ -153,7 +153,7 @@ $(document).ready(function () {
             function displayTimeLeft(seconds){
             }
         
-            timer(60);
+            timer(8);
         } //END OF THE TIMER FUNCTION 
         
         

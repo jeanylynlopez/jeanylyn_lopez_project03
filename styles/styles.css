@@ -137,7 +137,7 @@ html {
 
 h1 {
   font-family: 'Hind', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 35px; }
 
 h2 {
@@ -168,36 +168,33 @@ body {
 header {
   background-image: url(../assets/rupaul-lying-down-good-small.jpg);
   height: 100vh;
-  margin: 15px 0 0 400px;
+  margin: 0px 0 0 375px;
   background-size: cover;
   padding: 1px;
-  width: 90%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  width: 80%;
   position: relative; }
-
-.title h1 {
-  margin: 0 auto;
-  text-align: center;
-  width: 50%; }
 
 main {
   position: absolute;
-  top: 25px;
-  left: 10px; }
+  top: 70px;
+  left: 100px; }
 
 .title img {
-  width: 30%;
+  width: 45%;
   margin: 0 auto;
   display: block; }
 
+.title h1 {
+  margin: 0 auto;
+  width: 50%; }
+
 .timer {
-  height: 50px;
+  height: 40px;
   text-align: center;
   margin: 0 auto; }
 
 .sayings {
-  height: 50px;
+  height: 40px;
   margin: -20px auto;
   text-align: center;
   font-weight: 700;
@@ -215,48 +212,43 @@ ul {
   display: flex;
   -ms-flex-line-pack: center;
   align-content: center;
-  height: 190px;
-  width: 40%;
-  margin: -20px auto; }
-
-.remembered-queens {
-  height: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  margin: 0 auto; }
-
-.hightlight {
-  background-color: #bd2424;
-  color: white;
-  padding: 0 3px; }
+  height: 130px;
+  width: 40%; }
+  .list .remembered-queens {
+    height: 125px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 auto; }
+    .list .remembered-queens .hightlight {
+      background-color: #bd2424;
+      color: white;
+      padding: 0 3px; }
 
 form {
   margin: 0 auto;
+  margin-top: -25px;
   height: 20px; }
 
 label {
   display: block;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  background-color: #bd2424;
+  color: white;
+  width: 15%; }
 
 input {
   width: 50%;
   height: 40px;
-  margin: 10px auto;
   padding: 5px;
   display: block;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid black; }
-
-footer img {
-  width: 100%; }
