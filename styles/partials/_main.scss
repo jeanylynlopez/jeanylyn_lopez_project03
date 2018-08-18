@@ -5,8 +5,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
-    // margin-left: 200px;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 // =============== 
@@ -16,16 +15,17 @@ body {
 header {
     background-image: url(../assets/rupaul-lying-down-good-small.jpg);
     height: 100vh;
-    //top right bottom left
-    margin: 0px 0 0 300px;
-    // margin: 15px 0 0 400px;
-    background-size: cover;
+    margin-top: 0px;
+    // margin-left: 125px;
+    margin-left: 10%;
+    background-size: 100%;
+    background-repeat: no-repeat;
     padding: 1px;
-    width: 80%;
-    // overflow-y: scroll;
-    // overflow-x: hidden;
+    width: 100%;
     position: relative;
+    // bottom: 0;
 }
+
 
 // ===============
 // MAIN
@@ -33,29 +33,75 @@ header {
 
 main {
     position: absolute;
-    top: 70px;
-    left: 75px;
-    // margin-left: 150px;
-    // left: 10px;
+    // top: -100px;
+    // top: 55px;
+    top: 13%;
+    left: -5%;
+    // height: 100vh;
+    // height: 100%;
+    // left: -50px;
+    // right: 100px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    // margin-left: 200px;
+    // max-width: 800px;
+    // width: 100%;
+    // position: absolute;
+    // top: 0;
+    // z-index: 1;
+}
+
+// =============== 
+// RUPAUL'S PICTURE
+// ===============
+
+// .rupaul-pic {
+//     position: fixed;
+//     left: 300px;
+//     bottom: -75px;
+//     z-index: -1;
+// }
+
+// .rupaul-pic img {
+//     width: 100%;
+//     // margin-top: 100px;
+//     // margin: 0px 0 0 225px;
+//     // position: absolute;
+// }
+
+// ===============
+// INPUT
+// ===============
+
+.input {
+    // width: 100%;
+    // position: relative;
+    // top: 70px;
+    // top: 20%;
+    // left: -150px;
+    // left: 100px;
+    // position: absolute;
+
 }
 
 // ===============
 // TITLE
 // ===============
 
-.title img {
-    width: 45%;
-    margin: 0 auto;
-    display: block;
-}
-
- .title h1 {
-    margin: 0 auto;
-    text-align: center;
-    width: 50%;
-
-    // font-size: 30px;
-    // font-display: broadway;
+.title {
+    img {
+        width: 35%;
+        margin: 0 auto;
+        display: block;
+    }
+    h1 {
+       margin: 0 auto;
+       text-align: center;
+       width: 40%;
+    }
 }
 
 // ===============
@@ -67,13 +113,8 @@ main {
     text-align: center;
     margin: 0 auto;
     margin-top: -15px;
-    // font-size: 
 }
 
-h2 .hightlight {
-    background-color: $highlight-color;
-    color: white;
-}
 // ===============
 // RANDOM SAYINGS
 // ===============
@@ -85,11 +126,6 @@ h2 .hightlight {
     font-weight: 700;
     font-size: 2rem;
 }
-
-// .sayings .hightlight {
-//     background-color: $highlight-color;
-//     color: white;
-// }
 
 // ===============
 // LIST OF QUEENS
@@ -105,11 +141,8 @@ ul {
 
 .list {
     display: flex;
-    // align-content: center;
-    // justify-content: center;
     height: 130px;
     width: 40%;
-    // position: relative;
     margin: 0 auto;
     .remembered-queens {
         height: 125px;
@@ -118,12 +151,6 @@ ul {
         flex-wrap: wrap;
         align-content: center;
         margin: 10px auto;
-        // background-color: rgba(255, 255, 255, 0.7);
-        // padding-right: 5px;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // margin: 0 auto;
         .hightlight {
             background-color: $highlight-color;
             color: white;
@@ -132,30 +159,13 @@ ul {
     }
 }
 
-// .remembered-queens li {
-//     background-color: rgba(255, 255, 255, 0.7);
-//     padding: 0 3px;
-// }
-
-// .missed-queens {
-//     height: 120px;
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: wrap;
-//     align-content: center;
-//     // padding-right: 5px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-// }
-
 // =============== 
 // FORM TO PUT QUEEN NAME
 // ===============
 
 form {
     margin: 0 auto;
-    margin-top: 0px;
+    margin-top: 10px;
     height: 20px;
 }
 
@@ -165,11 +175,15 @@ label {
     text-align: center;
     background-color: $highlight-color;
     color: white;
-    width: 25%;
-    // height: 30px;
+    width: 10%;
+    p {
+        font-size: 1.2rem;
+    }
 }
+
+
 input {
-    width: 50%;
+    width: 30%;
     height: 40px;
     margin: 0 auto;
     margin-top: -5px;
@@ -183,7 +197,3 @@ input {
 // ===============
 // FOOTER
 // ===============
-
-// footer img {
-//     width: 100%;
-// }

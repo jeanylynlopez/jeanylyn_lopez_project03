@@ -137,8 +137,8 @@ html {
 
 h1 {
   font-family: 'Hind', sans-serif;
-  font-size: 2.5rem;
-  line-height: 30px; }
+  font-size: 2rem;
+  line-height: 25px; }
 
 h2 {
   font-family: 'Hind', sans-serif;
@@ -153,6 +153,9 @@ li {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem; }
 
+label {
+  font-size: 1rem; }
+
 input {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.3rem; }
@@ -163,41 +166,43 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 800px; }
+  max-width: 1000px; }
 
 header {
   background-image: url(../assets/rupaul-lying-down-good-small.jpg);
   height: 100vh;
-  margin: 0px 0 0 300px;
-  background-size: cover;
+  margin-top: 0px;
+  margin-left: 10%;
+  background-size: 100%;
+  background-repeat: no-repeat;
   padding: 1px;
-  width: 80%;
+  width: 100%;
   position: relative; }
 
 main {
   position: absolute;
-  top: 70px;
-  left: 75px; }
+  top: 13%;
+  left: -5%; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px; }
 
 .title img {
-  width: 45%;
+  width: 35%;
   margin: 0 auto;
   display: block; }
 
 .title h1 {
   margin: 0 auto;
   text-align: center;
-  width: 50%; }
+  width: 40%; }
 
 .timer {
   height: 50px;
   text-align: center;
   margin: 0 auto;
   margin-top: -15px; }
-
-h2 .hightlight {
-  background-color: #bd2424;
-  color: white; }
 
 .sayingsContainer {
   height: 50px;
@@ -240,7 +245,7 @@ ul {
 
 form {
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 10px;
   height: 20px; }
 
 label {
@@ -249,10 +254,12 @@ label {
   text-align: center;
   background-color: #bd2424;
   color: white;
-  width: 25%; }
+  width: 10%; }
+  label p {
+    font-size: 1.2rem; }
 
 input {
-  width: 50%;
+  width: 30%;
   height: 40px;
   margin: 0 auto;
   margin-top: -5px;

@@ -9,14 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Open+Sans:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body> 
+<body class="wrapper"> 
 
 <!-- =============== 
 HEADER 
 =============== -->
 
     <header>
-        <!-- <img src="assets/rupaul-logo.svg.png" alt="Rupaul's Drage Race logo in red">
+        <!-- <img src="assets/rupaul-lying-down-good-small.jpg" alt="">
+        <img src="assets/rupaul-logo.svg.png" alt="Rupaul's Drage Race logo in red">
         <h1>Can you name all the winners of RuPaul's Drag Race in 60 seconds?</h1> -->
     </header>
 
@@ -24,59 +25,73 @@ HEADER
 MAIN SECTION
 =============== -->
 
-    <main>
+    <main class="input">
+
+<!-- =============== 
+RUPAUL'S PICTURE
+=============== -->
+
+        <!-- <section class="rupaul-pic">
+            <img src="assets/rupaul-lying-down-good-small.jpg" alt="">
+        </section> -->
 
 <!-- ===============
 TITLE
 =============== -->
+            <section class="title container">
+                <img src="assets/rupaul-logo.svg.png" alt="Rupaul's Drage Race logo in red">
+                <h1>Can you name all the winners of RuPaul's Drag Race in 60 seconds?</h1>
+            </section>
 
-        <section class="title wrapper">
-            <img src="assets/rupaul-logo.svg.png" alt="Rupaul's Drage Race logo in red">
-            <h1>Can you name all the winners of RuPaul's Drag Race in 60 seconds?</h1>
-        </section>
-
-<!-- ===============
-TIMER CLOCK
-=============== -->
+    <!-- ===============
+    TIMER CLOCK
+    =============== -->
 
 
-        <section class="timer wrapper">
-            <h2></h2>
-        </section>
+            <section class="timer container">
+                <h2></h2>
+            </section>
 
-<!-- ===============
-RANDOM SAYINGS 
-=============== -->
-        
-        <section class="sayingsContainer wrapper">
-            <p class="sayings"></p>
-            <p class="gameover"></p>
-            <p class="champ"></p>
-            <!-- <p class="gif"></p> -->
-        </section>
-
-<!-- ===============
-LIST OF QUEENS
-=============== -->
-        <section class="list wrapper">
-            <!-- <img src="" alt=""> -->
-            <ul class="queen-list remembered-queens">
-            </ul>
-            <ul class="missed-queens">
-            </ul>
-        </section> 
-        
-<!-- =============== 
-FORM TO PUT QUEEN NAME
-=============== -->
+    <!-- ===============
+    RANDOM SAYINGS 
+    =============== -->
             
-        <section class="wrapper">
-            <form method="POST" class="queen-form" autocomplete="off" name="queen-form">
-                <label for="queen-input"><p>Name a queen!</p></label>
-                <input type="text" class="queen-input" name="queen-name" id="queen-input" placeholder="Type here...">
-            </form> 
-        </section>
+            <section class="sayingsContainer container">
+                <p class="sayings"></p>
+                <p class="gameover"></p>
+                <p class="champ"></p>
+                <!-- <p class="gif"></p> -->
+            </section>
 
+    <!-- ===============
+    LIST OF QUEENS
+    =============== -->
+            <section class="list container">
+                <!-- <img src="" alt=""> -->
+                <ul class="queen-list remembered-queens">
+                </ul>
+                <ul class="missed-queens">
+                </ul>
+            </section> 
+            
+    <!-- =============== 
+    FORM TO PUT QUEEN NAME
+    =============== -->
+                
+            <section class="container">
+                <form method="POST" class="queen-form" autocomplete="off" name="queen-form">
+                    <label for="queen-input"><p>Name a queen!</p></label>
+                    <input type="text" class="queen-input" name="queen-name" id="queen-input" placeholder="Type here...">
+                </form> 
+            </section>
+
+<!-- =============== 
+RUPAUL'S PICTURE
+=============== -->
+
+        <!-- <section class="rupaul-pic">
+            <img src="assets/rupaul-lying-down-good-small.jpg" alt="">
+        </section> -->
     </main>
 
 <!-- ===============

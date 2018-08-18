@@ -93,7 +93,7 @@ $(document).ready(function () {
             userInput = true;
             let otherQueens = $("input").val()
             $(".sayings").html("<p>She's is obviously a queen, but not what we're looking for :)</p>").show();
-            $(".sayings").delay(2000).fadeOut("slow");
+            $(".sayings").delay(3000).fadeOut("slow");
             // $(".otherQueen").html(`She's is obviously a queen, but not what we're looking for :)`).show();
             // $(".otherQueen").delay(2000).fadeOut("slow");
             $("input").val("");
@@ -138,6 +138,7 @@ $(document).ready(function () {
                         // console.log(newInputedQueens.length);
                         $(".timer h2").empty();
                         $(".timer h2").append(`<span class="highlight">OMG! YOU NAMED ALL THE QUEENS!</span>`).show();
+
                         // $("remembered-queens").delay(1000).empty();
 
                     } else if (secondsLeft < 0){
