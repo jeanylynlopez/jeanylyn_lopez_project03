@@ -51,7 +51,7 @@ main {
 
  .title h1 {
     margin: 0 auto;
-    // text-align: center;
+    text-align: center;
     width: 50%;
 
     // font-size: 30px;
@@ -63,23 +63,33 @@ main {
 // ===============
 
 .timer {
-    height: 40px;
+    height: 50px;
     text-align: center;
     margin: 0 auto;
+    margin-top: -15px;
     // font-size: 
 }
 
+h2 .hightlight {
+    background-color: $highlight-color;
+    color: white;
+}
 // ===============
 // RANDOM SAYINGS
 // ===============
 
-.sayings {
-    height: 40px;
-    margin: -20px auto;
+.sayingsContainer {
+    height: 50px;
+    margin: -25px auto;
     text-align: center;
     font-weight: 700;
     font-size: 2rem;
 }
+
+// .sayings .hightlight {
+//     background-color: $highlight-color;
+//     color: white;
+// }
 
 // ===============
 // LIST OF QUEENS
@@ -95,19 +105,20 @@ ul {
 
 .list {
     display: flex;
-    align-content: center;
+    // align-content: center;
     // justify-content: center;
     height: 130px;
     width: 40%;
     // position: relative;
-    // margin: -20px auto;
+    margin: 0 auto;
     .remembered-queens {
         height: 125px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        // align-content: center;
-        margin: 0 auto;
+        align-content: center;
+        margin: 10px auto;
+        // background-color: rgba(255, 255, 255, 0.7);
         // padding-right: 5px;
         // position: absolute;
         // top: 0;
@@ -120,6 +131,11 @@ ul {
         }
     }
 }
+
+// .remembered-queens li {
+//     background-color: rgba(255, 255, 255, 0.7);
+//     padding: 0 3px;
+// }
 
 // .missed-queens {
 //     height: 120px;
@@ -139,7 +155,7 @@ ul {
 
 form {
     margin: 0 auto;
-    margin-top: -25px;
+    margin-top: 0px;
     height: 20px;
 }
 
@@ -149,13 +165,14 @@ label {
     text-align: center;
     background-color: $highlight-color;
     color: white;
-    width: 15%;
+    width: 25%;
+    // height: 30px;
 }
 input {
     width: 50%;
     height: 40px;
     margin: 0 auto;
-    // margin-top: -10px;
+    margin-top: -5px;
     padding: 5px;
     display: block;
     text-align: center;

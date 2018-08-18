@@ -31,7 +31,7 @@ $(document).ready(function () {
 //START OF SUBMIT FUNCTION    
     $("form").on("submit", function(e){
         e.preventDefault();
-        let queenInput = $("input").val();
+        let queenInput = $("input").val().toLowerCase();
         let userInput = "false";  
         let eachNewInputedQueens = "";
         let countdown;
@@ -44,7 +44,6 @@ $(document).ready(function () {
                 eachNewInputedQueens = newInputedQueens[i];
                 // $(".sayings").html("<p>You already wrote that!</p>").show();
                 // $(".sayings").delay(2000).fadeOut("slow");
-                
                 $(".duplicate").html("<p>You already have her!</p>").show();
                 $(".duplicate").delay(800).fadeOut("slow");
                 $("input").val("");
@@ -68,10 +67,10 @@ $(document).ready(function () {
                     userInput = "true";
                     // queenInput = queenNames[item][0];
                     // randomInput = $("input").val();
-                    // $(".sayings").html("<p>Yes!</p>").show();
-                    // $(".sayings").delay(2000).fadeOut("slow");
-                    $(".right").html("Yass Queen!").show();
-                    $(".right").delay(500).fadeOut("slow");
+                    $(".sayings").html("<p>Yass Queen!</p>").show();
+                    $(".sayings").delay(2000).fadeOut("slow");
+                    // $(".right").html("Yass Queen!").show();
+                    // $(".right").delay(500).fadeOut("slow");
                     $(".remembered-queens").append("<li>" + queenNames[item][0] + "</li>");
                     //push the string the user typed in 
                     //console log both queenNames and newInputedQueens 
@@ -80,8 +79,8 @@ $(document).ready(function () {
                     newInputedQueens.push(queenNames[item][0], queenNames[item][1], queenNames[item][2], queenNames[item][3]);
                     // queenNames[item].pop();
                     queenNames[item].splice(0,5);
-                    console.log(queenNames);
-                    console.log(newInputedQueens);
+                    // console.log(queenNames);
+                    // console.log(newInputedQueens);
                     
                     $("input").val("");
                 }
@@ -93,22 +92,22 @@ $(document).ready(function () {
         if (($("input").val() === "beyonce") || ($("input").val() === "queen elizabeth")) {
             userInput = true;
             let otherQueens = $("input").val()
-            // $(".sayings").html("<p>She's is obviously a queen, but not what we're looking for :)</p>").show();
-            // $(".sayings").delay(2000).fadeOut("slow");
-            $(".anotherQueen").html(`She's is obviously a queen, but not what we're looking for :)`).show();
+            $(".sayings").html("<p>She's is obviously a queen, but not what we're looking for :)</p>").show();
+            $(".sayings").delay(2000).fadeOut("slow");
+            // $(".otherQueen").html(`She's is obviously a queen, but not what we're looking for :)`).show();
+            // $(".otherQueen").delay(2000).fadeOut("slow");
             $("input").val("");
-            $(".anotherQueen").delay(2000).fadeOut("slow");
         } 
 
 //THIS IS WHAT HAPPENS IF A USER INPUT IS FALSE
         if (userInput === "false"){
             //HTML IS MAKING SURE WE ONLY HAVE ONE DISPLAYED INSIDE OF IT AND WE'RE USING SHOW TO MAKE SURE IT SHOWS 
 
-            // $(".sayings").html("<p>Wrong!</p>").show();
-            // $(".sayings").delay(2000).fadeOut("slow");
-            $(".wrong").html("Wrong!").show();
+            $(".sayings").html("<p>Wrong!</p>").show();
+            $(".sayings").delay(2000).fadeOut("slow");
+            // $(".wrong").html("Wrong!").show();
+            // $(".wrong").delay(500).fadeOut("slow");
             $("input").val("");
-            $(".wrong").delay(500).fadeOut("slow");
         } 
         
 // PUSH INTO NEW ARRAY FOR THE FIRST INPUT 
@@ -134,11 +133,18 @@ $(document).ready(function () {
                     }
 
                     // in here can we stop the timer if it goes to equal to less than 0  
-                    if (secondsLeft < 0){
+                    if (newInputedQueens.length === 52) {
                         clearInterval(countdown);
-                        // alert("Game over!");
+                        // console.log(newInputedQueens.length);
                         $(".timer h2").empty();
-                        $(".timer h2").html("Game over!")
+                        $(".timer h2").append(`<span class="highlight">OMG! YOU NAMED ALL THE QUEENS!</span>`).show();
+                        // $("remembered-queens").delay(1000).empty();
+
+                    } else if (secondsLeft < 0){
+                        clearInterval(countdown);
+                        $(".timer h2").empty();
+                        $(".timer h2").html(`GAME OVER`)
+                        $(".gameover").html(`The queens you missed are highlighted in red.`);
                         $("input").attr("disabled", true);
 
                         for (let item in queenNames){
@@ -153,8 +159,19 @@ $(document).ready(function () {
             function displayTimeLeft(seconds){
             }
         
-            timer(8);
-        } //END OF THE TIMER FUNCTION 
+            timer(40);
+        } 
+        
+        // IF THE USER GETS ALL THE GIRLS THERE'S A CELEBRATION 
+        // CLEAR TIMER 
+        // CAN WE GET LIKE ANIMATIONS OF BALLOONS OR DISCO BALLS 
+        // DISABLE INPUT
+        // if (userInputFirst.length === 13){
+        //     clearInterval(countdown);
+        //     $(".timer h2").empty();
+        //     $(".timer h2").html(`OMG! YOU NAMED ALL THE QUEENS!`);
+
+        // }
         
         
 
