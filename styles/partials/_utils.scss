@@ -2,4 +2,31 @@
 
 $highlight-color: rgb(189, 36, 36); 
 
-// media query mixin 
+// media query mixin make sure it looks good all the way down to 320 
+
+@mixin break-point($point) {
+  @if $point == large {
+      @media (max-width: 925px) { @content; }
+  } 
+
+//   @else if $point == largeish {
+//     @media (max-width: 915px) { @content; }
+//   }
+  
+  @else if $point == medium {
+      @media (max-width: 775px) { @content; }
+  } 
+
+//   @else if $point == mediumish {
+//     @media (max-width: 680px) { @content; }
+//   }
+  
+  @else if $point == small {
+    @media (max-width: 670px) { @content; }
+  }  
+
+  @else if $point == smallest {
+    @media (max-width: 430px) { @content; }
+  }  
+
+}

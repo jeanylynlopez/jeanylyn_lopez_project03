@@ -1,28 +1,45 @@
+// @include break-point(medium)
+
+
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
+//   overflow-y: hidden;
+    display: flex;
 } 
 
 .wrapper {
+    max-width: 900px;
+    // max-height: 100vh;
+    // height: 100%;
+    // height: 100vh;
+    vertical-align: middle;
     margin: 0 auto;
-    max-width: 1000px;
+    position: relative;
+    // top: 100px;
 }
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    // border: 1px solid black;
+}
+
 
 // =============== 
 // HEADER 
 // ===============
 
 header {
-    background-image: url(../assets/rupaul-lying-down-good-small.jpg);
-    height: 100vh;
-    margin-top: 0px;
-    // margin-left: 125px;
-    margin-left: 10%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    padding: 1px;
-    width: 100%;
-    position: relative;
+    // background-image: url(../assets/rupaul-lying-down-good-small.jpg);
+    // height: 100vh;
+    // margin-top: 0px;
+    // // margin-left: 125px;
+    // margin-left: 10%;
+    // background-size: 100%;
+    // background-repeat: no-repeat;
+    // padding: 1px;
+    // width: 100%;
+    // position: relative;
     // bottom: 0;
 }
 
@@ -31,61 +48,62 @@ header {
 // MAIN
 // ===============
 
-main {
-    position: absolute;
-    // top: -100px;
-    // top: 55px;
-    top: 13%;
-    left: -5%;
-    // height: 100vh;
-    // height: 100%;
-    // left: -50px;
-    // right: 100px;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 1000px;
-    // margin-left: 200px;
-    // max-width: 800px;
-    // width: 100%;
-    // position: absolute;
-    // top: 0;
-    // z-index: 1;
-}
-
 // =============== 
 // RUPAUL'S PICTURE
 // ===============
 
-// .rupaul-pic {
-//     position: fixed;
-//     left: 300px;
-//     bottom: -75px;
-//     z-index: -1;
-// }
+    // .rupaul-pic {
+    //     // width: 100%;
+    //     .rupaul-pic img {
+    //         width: 200%;
+    //         // height: 100vh;
+    //     }
+    // }
+    
+.rupaul-pic {
+    width: 100%;
+    position: absolute;
+    // position: fixed;
+    top: 50px;
+    // right: 0;
+    left: 50px;
+    // bottom: 0;
+    z-index: -1;
+    @include break-point(medium){
+        // top: 50px;
+        left: 75px;
+    }
 
-// .rupaul-pic img {
-//     width: 100%;
-//     // margin-top: 100px;
-//     // margin: 0px 0 0 225px;
-//     // position: absolute;
-// }
+}
+
+.rupaul-pic img {
+    width: 90%;
+}
+
 
 // ===============
 // INPUT
 // ===============
 
 .input {
-    // width: 100%;
-    // position: relative;
-    // top: 70px;
-    // top: 20%;
-    // left: -150px;
-    // left: 100px;
-    // position: absolute;
-
+    width: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    // padding: 10px;
+    @include break-point(large){
+        left: 100px;
+    }
+    @include break-point(medium){
+        // top: 75px;
+        left: 125px;
+    }
+    // display: flex;
+    // flex-direction: column;
 }
+
+
 
 // ===============
 // TITLE
@@ -93,14 +111,18 @@ main {
 
 .title {
     img {
-        width: 35%;
+        width: 85%;
         margin: 0 auto;
         display: block;
     }
     h1 {
        margin: 0 auto;
        text-align: center;
-       width: 40%;
+       width: 80%;
+    //    background-color: rgba(255, 255, 255, 0.7);
+       @include break-point(medium){
+           width: 100%;
+       }
     }
 }
 
@@ -109,10 +131,15 @@ main {
 // ===============
 
 .timer {
-    height: 50px;
+    height: 40px;
+    // height: 5%;
     text-align: center;
     margin: 0 auto;
+    vertical-align: middle;
     margin-top: -15px;
+    @include break-point(medium){
+        margin-top: -20px;
+    }
 }
 
 // ===============
@@ -120,11 +147,19 @@ main {
 // ===============
 
 .sayingsContainer {
-    height: 50px;
-    margin: -25px auto;
+    height: 40px;
+    // width: 80%;
+    // height: 5%;
+    margin: 0px auto;
+    margin-top: -15px;
     text-align: center;
     font-weight: 700;
     font-size: 2rem;
+    // background-color: rgba(255, 255, 255, 0.7);
+    @include break-point(medium){
+        margin-top: -20px;
+        width: 80%;
+    }
 }
 
 // ===============
@@ -136,22 +171,39 @@ ul {
     li {
         margin-right: 10px;
         padding: 3px;
+        // background-color: rgba(255, 255, 255, 0.7);
+        // background-color: rgba(189, 36, 36, 0.5);
+        // margin: 2px;
     }
 }
 
 .list {
     display: flex;
-    height: 130px;
-    width: 40%;
-    margin: 0 auto;
+    // height: 130px;
+    height: 125px;
+    width: 80%;
+    // margin: 0 auto;
+    margin-top: -15px;
+    padding: 0 15px;
+    @include break-point(medium){
+        margin-top: -10px;
+    }
     .remembered-queens {
         height: 125px;
+        // height: 50%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
         margin: 10px auto;
-        .hightlight {
+        @include break-point(medium){
+            // margin: 5px auto;
+        }
+        .hightlightWhite {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0 3px;
+        }
+        .hightlightRed {
             background-color: $highlight-color;
             color: white;
             padding: 0 3px;
@@ -165,7 +217,7 @@ ul {
 
 form {
     margin: 0 auto;
-    margin-top: 10px;
+    // margin-top: 10px;
     height: 20px;
 }
 
@@ -175,7 +227,11 @@ label {
     text-align: center;
     background-color: $highlight-color;
     color: white;
-    width: 10%;
+    width: 30%;
+    padding: 0 3px;
+    @include break-point(medium){
+        // width: ;
+    }
     p {
         font-size: 1.2rem;
     }
@@ -183,8 +239,8 @@ label {
 
 
 input {
-    width: 30%;
-    height: 40px;
+    width: 60%;
+    height: 35px;
     margin: 0 auto;
     margin-top: -5px;
     padding: 5px;
@@ -195,5 +251,14 @@ input {
 }
 
 // ===============
-// FOOTER
+// RUPAUL PIC
 // ===============
+
+// .rupaul-pic {
+//     width: 100%;
+// }
+
+// .rupaul-pic img {
+//     width: 100%;
+// }
+

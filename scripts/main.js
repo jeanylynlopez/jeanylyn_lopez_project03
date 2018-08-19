@@ -44,8 +44,8 @@ $(document).ready(function () {
                 eachNewInputedQueens = newInputedQueens[i];
                 // $(".sayings").html("<p>You already wrote that!</p>").show();
                 // $(".sayings").delay(2000).fadeOut("slow");
-                $(".duplicate").html("<p>You already have her!</p>").show();
-                $(".duplicate").delay(800).fadeOut("slow");
+                $(".sayings").html("<p>You already have her!</p>").show();
+                $(".sayings").delay(800).fadeOut("slow");
                 $("input").val("");
             } 
         } // END OF THE FIRST LOOP FOR THE NEW ARRAY newInputedQueens
@@ -71,7 +71,10 @@ $(document).ready(function () {
                     $(".sayings").delay(2000).fadeOut("slow");
                     // $(".right").html("Yass Queen!").show();
                     // $(".right").delay(500).fadeOut("slow");
-                    $(".remembered-queens").append("<li>" + queenNames[item][0] + "</li>");
+                    // $(".remembered-queens").append("<li>" + queenNames[item][0] + "</li>");
+                    $(".remembered-queens").append(`<li><span class="hightlightWhite">${queenNames[item][0]} </span></li>`);
+
+                    // $(".remembered-queens").append(`<li><span class="hightlightRed">${queenNames[item][0]} </span></li>`)
                     //push the string the user typed in 
                     //console log both queenNames and newInputedQueens 
                     //const queenNames is const change to let 
@@ -92,7 +95,7 @@ $(document).ready(function () {
         if (($("input").val() === "beyonce") || ($("input").val() === "queen elizabeth")) {
             userInput = true;
             let otherQueens = $("input").val()
-            $(".sayings").html("<p>She's is obviously a queen, but not what we're looking for :)</p>").show();
+            $(".sayings").html("<p>She's obviously a queen, but not what we're looking for.</p>").show();
             $(".sayings").delay(3000).fadeOut("slow");
             // $(".otherQueen").html(`She's is obviously a queen, but not what we're looking for :)`).show();
             // $(".otherQueen").delay(2000).fadeOut("slow");
@@ -150,7 +153,7 @@ $(document).ready(function () {
 
                         for (let item in queenNames){
                             if (queenNames[item][0] !== undefined)
-                                $(".remembered-queens").append(`<li><span class="hightlight">${queenNames[item][0]} </span></li>`)
+                                $(".remembered-queens").append(`<li><span class="hightlightRed">${queenNames[item][0]} </span></li>`)
                         }
                     }
 
@@ -160,7 +163,7 @@ $(document).ready(function () {
             function displayTimeLeft(seconds){
             }
         
-            timer(40);
+            timer(5);
         } 
         
         // IF THE USER GETS ALL THE GIRLS THERE'S A CELEBRATION 

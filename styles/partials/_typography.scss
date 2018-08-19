@@ -12,13 +12,18 @@
 
     html {
         font-size: 62.5%;
+        @include break-point(medium){
+            font-size: 55%;
+        }
     }
 
     h1 {
         font-family: 'Hind', sans-serif;
         font-size: 2rem;
         line-height: 25px;
-        
+        @include break-point(medium){
+            line-height: 20px;
+        }
     }
 
     h2 {

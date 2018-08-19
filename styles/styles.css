@@ -134,11 +134,17 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 775px) {
+    html {
+      font-size: 55%; } }
 
 h1 {
   font-family: 'Hind', sans-serif;
   font-size: 2rem;
   line-height: 25px; }
+  @media (max-width: 775px) {
+    h1 {
+      line-height: 20px; } }
 
 h2 {
   font-family: 'Hind', sans-serif;
@@ -162,54 +168,80 @@ input {
 
 body {
   overflow-x: hidden;
-  overflow-y: hidden; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .wrapper {
+  max-width: 900px;
+  vertical-align: middle;
   margin: 0 auto;
-  max-width: 1000px; }
-
-header {
-  background-image: url(../assets/rupaul-lying-down-good-small.jpg);
-  height: 100vh;
-  margin-top: 0px;
-  margin-left: 10%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  padding: 1px;
-  width: 100%;
   position: relative; }
-
-main {
-  position: absolute;
-  top: 13%;
-  left: -5%; }
 
 .container {
   margin: 0 auto;
-  max-width: 1000px; }
+  width: 100%; }
+
+.rupaul-pic {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: -1; }
+  @media (max-width: 775px) {
+    .rupaul-pic {
+      left: 75px; } }
+
+.rupaul-pic img {
+  width: 90%; }
+
+.input {
+  width: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 75px;
+  left: 50px; }
+  @media (max-width: 925px) {
+    .input {
+      left: 100px; } }
+  @media (max-width: 775px) {
+    .input {
+      left: 125px; } }
 
 .title img {
-  width: 35%;
+  width: 85%;
   margin: 0 auto;
   display: block; }
 
 .title h1 {
   margin: 0 auto;
   text-align: center;
-  width: 40%; }
+  width: 80%; }
+  @media (max-width: 775px) {
+    .title h1 {
+      width: 100%; } }
 
 .timer {
-  height: 50px;
+  height: 40px;
   text-align: center;
   margin: 0 auto;
+  vertical-align: middle;
   margin-top: -15px; }
+  @media (max-width: 775px) {
+    .timer {
+      margin-top: -20px; } }
 
 .sayingsContainer {
-  height: 50px;
-  margin: -25px auto;
+  height: 40px;
+  margin: 0px auto;
+  margin-top: -15px;
   text-align: center;
   font-weight: 700;
   font-size: 2rem; }
+  @media (max-width: 775px) {
+    .sayingsContainer {
+      margin-top: -20px;
+      width: 80%; } }
 
 ul {
   list-style: none; }
@@ -221,9 +253,13 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 130px;
-  width: 40%;
-  margin: 0 auto; }
+  height: 125px;
+  width: 80%;
+  margin-top: -15px;
+  padding: 0 15px; }
+  @media (max-width: 775px) {
+    .list {
+      margin-top: -10px; } }
   .list .remembered-queens {
     height: 125px;
     display: -webkit-box;
@@ -238,14 +274,16 @@ ul {
     -ms-flex-line-pack: center;
     align-content: center;
     margin: 10px auto; }
-    .list .remembered-queens .hightlight {
+    .list .remembered-queens .hightlightWhite {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 0 3px; }
+    .list .remembered-queens .hightlightRed {
       background-color: #bd2424;
       color: white;
       padding: 0 3px; }
 
 form {
   margin: 0 auto;
-  margin-top: 10px;
   height: 20px; }
 
 label {
@@ -254,13 +292,14 @@ label {
   text-align: center;
   background-color: #bd2424;
   color: white;
-  width: 10%; }
+  width: 30%;
+  padding: 0 3px; }
   label p {
     font-size: 1.2rem; }
 
 input {
-  width: 30%;
-  height: 40px;
+  width: 60%;
+  height: 35px;
   margin: 0 auto;
   margin-top: -5px;
   padding: 5px;
