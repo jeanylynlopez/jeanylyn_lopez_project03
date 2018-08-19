@@ -163,7 +163,7 @@ $(document).ready(function () {
             function displayTimeLeft(seconds){
             }
         
-            timer(5);
+            timer(60);
         } 
         
         // IF THE USER GETS ALL THE GIRLS THERE'S A CELEBRATION 
