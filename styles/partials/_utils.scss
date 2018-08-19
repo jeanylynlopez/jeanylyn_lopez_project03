@@ -8,25 +8,21 @@ $highlight-color: rgb(189, 36, 36);
   @if $point == large {
       @media (max-width: 925px) { @content; }
   } 
-
-//   @else if $point == largeish {
-//     @media (max-width: 915px) { @content; }
-//   }
   
   @else if $point == medium {
       @media (max-width: 775px) { @content; }
   } 
 
-//   @else if $point == mediumish {
-//     @media (max-width: 680px) { @content; }
-//   }
+  @else if $point == mediumish {
+    @media (max-width: 670px) { @content; }
+  }
   
   @else if $point == small {
-    @media (max-width: 670px) { @content; }
+    @media (max-width: 500px) { @content; }
   }  
 
-  @else if $point == smallest {
-    @media (max-width: 430px) { @content; }
+  @else if $point == smallish {
+    @media (max-width: 370px) { @content; }
   }  
 
 }

@@ -12,8 +12,11 @@
 
     html {
         font-size: 62.5%;
-        @include break-point(medium){
+        @include break-point(small){
             font-size: 55%;
+        }
+        @include break-point(smallish){
+            font-size: 52%;
         }
     }
 
@@ -30,19 +33,26 @@
         font-family: 'Hind', sans-serif;
         font-size: 2.5rem;
         color: $highlight-color;
+        @include break-point(smallish){
+            font-size: 2rem;
+        }
     }
 
-    p {
+    p, li {
         font-family: 'Open Sans', sans-serif;
         font-size: 1.6rem;
+        @include break-point(medium){
+            // line-height: 20px;
+            font-size: 1.4rem;
+        }
         // font-weight: 
         // font-size: 30px;
     }
     
-    li {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.6rem;
-    }
+    // li {
+    //     font-family: 'Open Sans', sans-serif;
+    //     font-size: 1.6rem;
+    // }
 
     label {
         font-size: 1rem;

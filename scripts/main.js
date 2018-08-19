@@ -148,7 +148,7 @@ $(document).ready(function () {
                         clearInterval(countdown);
                         $(".timer h2").empty();
                         $(".timer h2").html(`GAME OVER`)
-                        $(".gameover").html(`The queens you missed are highlighted in red.`);
+                        $(".gameover").html(`<span class="highlightRed">The queens you missed are highlighted in red.</span>`);
                         $("input").attr("disabled", true);
 
                         for (let item in queenNames){
