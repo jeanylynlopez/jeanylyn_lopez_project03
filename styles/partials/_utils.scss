@@ -1,8 +1,5 @@
-//highlight colour 
 
 $highlight-color: rgb(189, 36, 36); 
-
-// media query mixin make sure it looks good all the way down to 320 
 
 @mixin break-point($point) {
   @if $point == large {
