@@ -1,46 +1,45 @@
 
-
-    html {
-        font-size: 62.5%;
-        @include break-point(small){
-            font-size: 55%;
-        }
-        @include break-point(smallish){
-            font-size: 52%;
-        }
+html {
+    font-size: 62.5%;
+    @include break-point(small){
+        font-size: 55%;
     }
+    @include break-point(smallish){
+        font-size: 52%;
+    }
+}
 
-    h1 {
-        font-family: 'Hind', sans-serif;
+h1 {
+    font-family: 'Hind', sans-serif;
+    font-size: 2rem;
+    line-height: 25px;
+    @include break-point(medium){
+        line-height: 20px;
+    }
+}
+
+h2 {
+    font-family: 'Hind', sans-serif;
+    font-size: 2rem;
+    color: $highlight-color;
+    @include break-point(smallish){
         font-size: 2rem;
-        line-height: 25px;
-        @include break-point(medium){
-            line-height: 20px;
-        }
     }
+}
 
-    h2 {
-        font-family: 'Hind', sans-serif;
-        font-size: 2rem;
-        color: $highlight-color;
-        @include break-point(smallish){
-            font-size: 2rem;
-        }
+p, li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    @include break-point(medium){
+        font-size: 1.4rem;
     }
+}
 
-    p, li {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.6rem;
-        @include break-point(medium){
-            font-size: 1.4rem;
-        }
-    }
+label {
+    font-size: 1rem;
+}
 
-    label {
-        font-size: 1rem;
-    }
-
-    input {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.3rem;
-    }
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+}
